@@ -1,0 +1,87 @@
+const express = require('express')
+// const postModel = require('../models/post.model.js')
+const { BadRequestError, AuthFailureError, ForbiddenError } = require('../core/error.response')
+const bcrypt = require('bcryptjs')
+const crypto = require('crypto')
+const KeyTokenService = require('./keyToken.service')
+const { createTokenPair, verifyJWT } = require('../auth/authUntil')
+const { getInfoData } = require('../utils')
+const { findByEmail } = require('./shop.service')
+const { findAllPost, getAllByIds } = require('../models/repositories/post.repo.js')
+const mongoose = require('mongoose');
+const binhluanModels = require('../models/binhluan.model.js')
+
+
+
+class YeuThichService {
+
+
+    static getSearchName = async ({ keySearch }) => {
+        try {
+            const regexSearch = new RegExp(keySearch, 'i')
+            const result = await musicModels.find({ music_name: { $regex: regexSearch } }).lean();
+
+            return result
+
+        } catch (error) {
+            throw error
+        }
+    }
+
+    static getByIdCommnet = async (payload) => {
+        try {
+            const result = binhluanModels.find({
+                music_id: payload.id
+            })
+            return result
+
+        } catch (error) {
+            throw error
+        }
+    }
+
+    static createComment = async (payload) => {
+        console.log(payload)
+        try {
+            const newPost = binhluanModels.create({
+                user_id: payload.user_id,
+                music_id: payload.music_id,
+                conten: payload.conten,
+                user_name: payload.user_name
+
+            })
+            return newPost;
+
+        } catch (error) {
+            throw error;
+        }
+    }
+
+
+    static deleteFriend = async (payload) => {
+        try {
+            const checkPost = await shopModels.findById(payload.userId);
+
+            if (!checkPost) {
+                throw new AuthFailureError('Authentication error');
+            }
+
+            const newFriend = checkPost.friends.filter((element) => element.youId !== payload.youId);
+
+            checkPost.friends = newFriend
+            // console.log(removeFromArray)
+
+            const result = await checkPost.save();
+            return result;
+
+        } catch (error) {
+            throw error
+        }
+    }
+
+
+};
+
+
+
+module.exports = YeuThichService
