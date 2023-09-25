@@ -30,7 +30,7 @@ class MusicService {
 
     static getMusic = async ({ keyId }) => {
         try {
-            const result = musicModels.find({}).limit(5);
+            const result = musicModels.find({});
             return result
 
         } catch (error) {
