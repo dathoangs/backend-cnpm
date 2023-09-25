@@ -29,6 +29,13 @@ x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811
     "password": "1"
 }
 
+###
+POST {{url_dev}}/music/getMusicById/650dbd898b1c4b0e533b49a3
+Content-Type: application/json 
+x-api-key: b70aae6d4d07d03bbfb02cb7573c9bac0791ef988cf22964dbd32c41a010b310389a835933f5551d4a2d9d5be26a1a508e1a47c9344a2ced693ec86cdbd412ae
+x-client-id: 650d446b221c6f9330411bdf
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTBkNDQ2YjIyMWM2ZjkzMzA0MTFiZGYiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5NTM5OTI1NSwiZXhwIjoxNjk1NTcyMDU1fQ.gTw-0ISpfeJAPZJQj3IMheq3NBlDTclLsxw0Lxp5uug
+
 
 ###
 POST {{url_dev}}/music/createMusic
