@@ -32,10 +32,10 @@ class BinhLuanController {
         }).send(res)
     }
 
-    deleteFriend = async (req, res, next) => {
+    deleteComment = async (req, res, next) => {
         new CREATED({
             message: 'Register OK',
-            metadata: await BinhLuanService.deleteFriend(req.body),
+            metadata: await BinhLuanService.deleteComment(req.body),
         }).send(res)
     }
 

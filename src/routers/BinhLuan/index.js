@@ -11,6 +11,8 @@ router.post('/getByIdCommnet/:id', asyncHandler(BinhLuanController.getByIdCommne
 //check _id của users
 router.use(authenticationV2)
 
+router.post('/deleteComment', asyncHandler(BinhLuanController.deleteComment))
+
 router.post('/createComment', asyncHandler(BinhLuanController.createComment))
 router.post('/createComment', asyncHandler(BinhLuanController.createComment))
 router.post('/deleteComment', asyncHandler(BinhLuanController.deleteComment))

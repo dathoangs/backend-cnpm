@@ -55,7 +55,7 @@ class AccessService {
             const checkShop = await shopModel.findOne({ email }).lean()
 
             if (checkShop) {
-                throw new BadRequestError('Error: Shop đã đc đăng ký!!!')
+                throw new BadRequestError('Tài khoản đã đc đăng ký!!!')
             }
             const passwordHash = await bcrypt.hash(password, 10)
 

@@ -58,21 +58,20 @@ class YeuThichService {
     }
 
 
-    static deleteFriend = async (payload) => {
+    static deleteComment = async (payload) => {
         try {
-            const checkPost = await shopModels.findById(payload.userId);
+            const deleteComment = binhluanModels.deleteMany({
+                $and: [
+                    { user_id: payload.user_id },
+                    { conten: payload.conten },
+                    {
+                        createdAt: payload.createdAt
+                    }
 
-            if (!checkPost) {
-                throw new AuthFailureError('Authentication error');
-            }
+                ]
+            });
 
-            const newFriend = checkPost.friends.filter((element) => element.youId !== payload.youId);
-
-            checkPost.friends = newFriend
-            // console.log(removeFromArray)
-
-            const result = await checkPost.save();
-            return result;
+            return deleteComment;
 
         } catch (error) {
             throw error
