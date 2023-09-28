@@ -52,49 +52,87 @@ class AccessService {
     static singup = async ({ name, email, password }) => {
 
         try {
-            const checkShop = await shopModel.findOne({ email }).lean()
 
-            if (checkShop) {
-                throw new BadRequestError('Tài khoản đã đc đăng ký!!!')
+            if (email == "" || password == "") {
+                return {
+                    code: '503',
+                    message: 'Vui lòng nhập đủ thông tin',
+                }
             }
-            const passwordHash = await bcrypt.hash(password, 10)
+            else {
 
-            const newShop = await shopModel.create({
-                name,
-                email,
-                password: passwordHash,
-                roles: [RoleShop.SHOP],
-            })
+                const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+                if (!emailPattern.test(email)) {
+                    // alert("Vui lòng nhập một địa chỉ email hợp lệ");
 
-            if (newShop) {
-                const privateKey = crypto.randomBytes(64).toString('hex')
-                const publicKey = crypto.randomBytes(64).toString('hex')
+                    return {
+                        code: '503',
+                        message: 'Vui lòng nhập một địa chỉ email hợp lệ',
+                    }
+                }
 
-                const tokens = await createTokenPair({ userId: newShop.id }, privateKey, publicKey)
+                // Check if the password is at least 6 characters long
+                if (password.length < 6) {
+                    // alert("Mật khẩu phải chứa ít nhất 6 ký tự");
 
-                const publicKeyString = await KeyTokenService.createKeyToken({
-                    userId: newShop._id,
-                    publicKey,
-                    privateKey,
-                    refreshToken: tokens.refreshToken,
+                    return {
+                        code: '503',
+                        message: 'Mật khẩu phải chứa ít nhất 6 ký tự!!',
+                    }
+
+                }
+                // Check if the password is at least 6 characters long
+                if (password.length > 20) {
+                    // alert("Mật khẩu phải chứa ít nhất 6 ký tự");
+                    return {
+                        code: '503',
+                        message: 'Mật khẩu quá 20 kí tự!!',
+                    }
+                }
+
+                const checkShop = await shopModel.findOne({ email }).lean()
+
+                if (checkShop) {
+                    throw new BadRequestError('Tài khoản đã đc đăng ký!!!')
+                }
+                const passwordHash = await bcrypt.hash(password, 10)
+
+                const newShop = await shopModel.create({
+                    name,
+                    email,
+                    password: passwordHash,
+                    roles: [RoleShop.SHOP],
                 })
 
-                if (!publicKeyString) {
+                if (newShop) {
+                    const privateKey = crypto.randomBytes(64).toString('hex')
+                    const publicKey = crypto.randomBytes(64).toString('hex')
+
+                    const tokens = await createTokenPair({ userId: newShop.id }, privateKey, publicKey)
+
+                    const publicKeyString = await KeyTokenService.createKeyToken({
+                        userId: newShop._id,
+                        publicKey,
+                        privateKey,
+                        refreshToken: tokens.refreshToken,
+                    })
+
+                    if (!publicKeyString) {
+                        return {
+                            code: 'xxxx',
+                            message: 'publicKeyString error',
+                        }
+                    }
                     return {
-                        code: 'xxxx',
-                        message: 'publicKeyString error',
+                        shop: getInfoData(['_id', 'name', 'email'], newShop),
+                        tokens,
                     }
                 }
                 return {
-                    shop: getInfoData(['_id', 'name', 'email'], newShop),
-                    tokens,
+                    code: 200,
+                    metadata: null,
                 }
             }
-            return {
-                code: 200,
-                metadata: null,
-            }
-
         } catch (error) {
             return {
                 code: 'xxx',
@@ -117,7 +155,7 @@ class AccessService {
             const match = await bcrypt.compare(password, foundShop.password)
 
 
-            if (!match) throw new AuthFailureError('Authentication error')
+            if (!match) throw new AuthFailureError('Sai mật khẩu hoặc tài khoản!!')
 
 
             const privateKey = crypto.randomBytes(64).toString('hex')

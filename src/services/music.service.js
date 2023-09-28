@@ -41,6 +41,16 @@ class MusicService {
     static createMusic = async (payload) => {
         console.log(payload)
         try {
+
+            if (payload.music_name == "" || payload.music_genre == "" ||
+                payload.img == "" || payload.tacgia == "" || payload.url == ""
+            ) {
+                return {
+                    code: '401',
+                    message: 'Vui lòng nhập đủ thông tin',
+                }
+            }
+
             const newPost = musicModels.create({
                 music_name: payload.music_name,
                 music_genre: payload.music_genre,
@@ -77,6 +87,14 @@ class MusicService {
 
     static getMusicById = async (payload) => {
         const checkPost = await musicModels.findById(payload.id);
+
+        console.log({ checkPost })
+        if (checkPost == "") {
+            return {
+                code: '503',
+                message: 'Không tìm thấy thông tin bài hát',
+            }
+        }
 
         return checkPost;
     }
