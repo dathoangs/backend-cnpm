@@ -32,10 +32,10 @@ class AccessController {
         }).send(res)
     }
 
-    deleteFriend = async (req, res, next) => {
+    deleteMusic = async (req, res, next) => {
         new CREATED({
             message: 'Register OK',
-            metadata: await MusicPostService.deleteFriend(req.body),
+            metadata: await MusicPostService.deleteMusic(req.body),
         }).send(res)
     }
 
@@ -46,10 +46,10 @@ class AccessController {
         }).send(res)
     }
 
-    addImg = async (req, res, next) => {
+    getMusicByUserId = async (req, res, next) => {
         new CREATED({
             message: 'Register OK',
-            metadata: await MusicPostService.addImg(req.body),
+            metadata: await MusicPostService.getMusicByUserId(req.params),
         }).send(res)
     }
 }

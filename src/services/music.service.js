@@ -38,6 +38,18 @@ class MusicService {
         }
     }
 
+    static getMusicByUserId = async ({ userId }) => {
+        try {
+            const result = musicModels.find({
+                user_id: userId
+            });
+            return result
+
+        } catch (error) {
+            throw error
+        }
+    }
+
     static createMusic = async (payload) => {
         console.log(payload)
         try {
@@ -99,54 +111,9 @@ class MusicService {
         return checkPost;
     }
 
-    static addImg = async (payload) => {
-
+    static deleteMusic = async (payload) => {
         try {
-
-            const filter = { _id: payload.user_id };
-            const update = {
-                img: payload.img,
-            };
-
-
-            const options = { upsert: true, new: true };
-
-            const newPost = await shopModels.findOneAndUpdate(filter, update, options)
-
-
-            return newPost;
-
-        } catch (error) {
-            throw error;
-        }
-    }
-
-    static addFriend = async (payload) => {
-        try {
-            const checkPost = await shopModels.findById(payload.userId);
-
-            if (!checkPost) {
-                throw new AuthFailureError('Authentication error');
-            }
-            // Phần tử không tồn tại, thêm mới vào mảng
-            checkPost.friends.push({
-                youId: payload.youId,
-                status: false
-
-            });
-
-
-            const result = await checkPost.save();
-            return result;
-
-        } catch (error) {
-            throw error
-        }
-    }
-
-    static deleteFriend = async (payload) => {
-        try {
-            const checkPost = await shopModels.findById(payload.userId);
+            const checkPost = await musicModels.findById(payload.userId);
 
             if (!checkPost) {
                 throw new AuthFailureError('Authentication error');

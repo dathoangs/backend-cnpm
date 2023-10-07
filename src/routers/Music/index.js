@@ -14,12 +14,8 @@ router.post('/getSearchName/:keySearch', asyncHandler(MusicController.getSearchN
 router.use(authenticationV2)
 
 router.post('/createMusic', asyncHandler(MusicController.createMusic))
-router.post('/postHaha', asyncHandler(MusicController.postHaha))
-router.post('/createComment', asyncHandler(MusicController.createComment))
-router.post('/deleteComment', asyncHandler(MusicController.deleteComment))
-
-
-
+router.post('/deleteMusic', asyncHandler(MusicController.deleteMusic))
+router.post('/getMusicByUserId/:userId', asyncHandler(MusicController.getMusicByUserId))
 
 
 

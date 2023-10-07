@@ -26,7 +26,7 @@ x-api-key: b70aae6d4d07d03bbfb02cb7573c9bac0791ef988cf22964dbd32c41a010b310389a8
 
 {
     "name": "Ngô Xuân Quy",
-    "email": "quyquy@gmail.com",
+    "email": "quyquy2131@gmail.com",
     "password": "18122002"
 } 
 ###
@@ -48,12 +48,21 @@ x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811
 
 
 ###
-POST {{url_dev}}/music/getMusicById/650ebe6884b5000ee40c72f61
+POST {{url_dev}}/music/getMusicById/650ebe6884b5000ee40c72f6
 Content-Type: application/json 
 x-api-key: b70aae6d4d07d03bbfb02cb7573c9bac0791ef988cf22964dbd32c41a010b310389a835933f5551d4a2d9d5be26a1a508e1a47c9344a2ced693ec86cdbd412ae
 x-client-id: 650d4f4a221c6f9330411bef
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTBkNGY0YTIyMWM2ZjkzMzA0MTFiZWYiLCJlbWFpbCI6IjEiLCJpYXQiOjE2OTU3MzU3NTcsImV4cCI6MTY5NTkwODU1N30.BSRJJ-GIO0zULouP6Gir1kbBWU4tf3CgBflahylWzjg
 
+
+
+
+###
+POST {{url_dev}}/music/getMusicByUserId/650d4f4a221c6f9330411bef
+Content-Type: application/json 
+x-api-key: b70aae6d4d07d03bbfb02cb7573c9bac0791ef988cf22964dbd32c41a010b310389a835933f5551d4a2d9d5be26a1a508e1a47c9344a2ced693ec86cdbd412ae
+x-client-id: 650d4f4a221c6f9330411bef
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTBkNGY0YTIyMWM2ZjkzMzA0MTFiZWYiLCJlbWFpbCI6IjEiLCJpYXQiOjE2OTYxNDg2OTksImV4cCI6MTY5NjMyMTQ5OX0.WPmBa7q87bBadfcxf6yMd6I0C0jkWhWx-uI-OKqzZmQ
 
 
 
@@ -103,242 +112,3 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTEyZGIxNjMy
 
 
 
-
-
-###
-POST {{url_dev}}/createPost
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDU5NTgyMCwiZXhwIjoxNjkwNzY4NjIwfQ.UtR7qjA5U3P76urgglcQl8Td2noxjW31NH9153rsTTI
-
-{
-    "user_id": "64c471bae4f431c913319fae",
-  "name": "12a2",
-  "content": "quy",
-  "imgs": ["1", "2"]
-}
-
-###
-POST {{url_dev}}/getPost
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDcwODgwMSwiZXhwIjoxNjkwODgxNjAxfQ.JmfsyAa8VBx61ASCEs2o-W4P-barfTLX4GLfz7mixdE
-
-
-###
-POST {{url_dev}}/postHaha
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDYxODY3NiwiZXhwIjoxNjkwNzkxNDc2fQ.dNrJDS3jWgbu5NnCHRNxqIAzQKT3-wEpdjl4u8JCjuI
-
-{
-    "user_id": "64c471bae4f431c913319",
-    "user_post": "64c4e715f281a7e6ae506a4f",
-    "feeling_value": "12"
-}
-
-###
-POST {{url_dev}}/getAllById?user_id=64c47c026a88524bad10ddf0
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDcwODgwMSwiZXhwIjoxNjkwODgxNjAxfQ.JmfsyAa8VBx61ASCEs2o-W4P-barfTLX4GLfz7mixdE
-
-###
-POST {{url_dev}}/user/getUserName/NGO
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDcwODgwMSwiZXhwIjoxNjkwODgxNjAxfQ.JmfsyAa8VBx61ASCEs2o-W4P-barfTLX4GLfz7mixdE
-
-
-###
-POST {{url_dev}}/friends/getNameById
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDcwODgwMSwiZXhwIjoxNjkwODgxNjAxfQ.JmfsyAa8VBx61ASCEs2o-W4P-barfTLX4GLfz7mixdE
-
-{
-    "userId" : "64c47c026a88524bad10ddf0",
-    "youId" : "64c5233cb89de219fbc3a6b0"
-}
-
-###
-POST {{url_dev}}/friends/checkxacnhanBanBe
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDcwODgwMSwiZXhwIjoxNjkwODgxNjAxfQ.JmfsyAa8VBx61ASCEs2o-W4P-barfTLX4GLfz7mixdE
-
-{
-    "youId" : "64c47c026a88524bad10ddf0",
-    "userId" : "64c5233cb89de219fbc3a6b0"
-}
-
-###
-POST {{url_dev}}/friends/XacNhanFriend
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDcwODgwMSwiZXhwIjoxNjkwODgxNjAxfQ.JmfsyAa8VBx61ASCEs2o-W4P-barfTLX4GLfz7mixdE
-
-{
-    "youId" : "64c47c026a88524bad10ddf0",
-    "userId" : "64c5233cb89de219fbc3a6b0"
-}
-
-
-###
-POST {{url_dev}}/friends/addFriend
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDcwODgwMSwiZXhwIjoxNjkwODgxNjAxfQ.JmfsyAa8VBx61ASCEs2o-W4P-barfTLX4GLfz7mixdE
-
-{
-    "userId" : "64c471bae4f431c913319fae1",
-    "youId" : "64c46e85d0ca4213183cd5f1"
-}
-
-###
-POST {{url_dev}}/friends/deleteFriend
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDcwODgwMSwiZXhwIjoxNjkwODgxNjAxfQ.JmfsyAa8VBx61ASCEs2o-W4P-barfTLX4GLfz7mixdE
-
-{
-    "userId" : "64c471bae4f431c913319fae1",
-    "youId" : "64c46e85d0ca4213183cd5f1"
-}
-
-###
-POST {{url_dev}}/friends/getAllPostById/64c46e85d0ca4213183cd5fc
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDk4ODMxNSwiZXhwIjoxNjkxMTYxMTE1fQ.NShHJxpWlYArMXWHtTj_l_q9PTG89r1JStukt9LLx10
-
-
-###
-POST {{url_dev}}/user/getFullUser
-Content-Type: application/json 
-x-api-key: 26536df4388e073d665ec85c9a86210f0012a9c46312e4e947efabb5cb16581b7dd5eed575ec5ca07b83b92c80b834de0b1db41017c161548fd91f3f4c2e3dab
-x-client-id: 64cf6d35462498db0cb5251f
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGNmNmQzNTQ2MjQ5OGRiMGNiNTI1MWYiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MTMxNjQxNCwiZXhwIjoxNjkxNDg5MjE0fQ.0nrw-KpicI5UjwJHOupn9akFvlJSbT7XUiE_8xkckO8
-
-
-
-###
-POST {{url_dev}}/messages/getmsg
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDg2MDk4MywiZXhwIjoxNjkxMDMzNzgzfQ.DvgnZp7Bg9u3gNNjjcZfEn0UP8m1u9a9cnnZVlqdzWQ
-
-
-###
-POST {{url_dev}}/nofitication/addNofiticatiion
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDk2MzczMiwiZXhwIjoxNjkxMTM2NTMyfQ.xHXH6hlDubnvJteK9MTw72B4mwkbq7uh15iV6S1uaWU
-
-{
-      "to_name": "abc1",
-        "to_id": "payload1",
-        "user_id": "payload1",
-        "type": "payload1",
-        "post_id": "payload1"
-}
-
-###
-POST {{url_dev}}/nofitication/getNofiticatiion/payload1
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MDk2MzczMiwiZXhwIjoxNjkxMTM2NTMyfQ.xHXH6hlDubnvJteK9MTw72B4mwkbq7uh15iV6S1uaWU
-
-
-
-###
-POST {{url_dev}}/createComment
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MTAyOTg5NywiZXhwIjoxNjkxMjAyNjk3fQ.SjDGEa0oXQwsxdRWxfjJIIeKFagH-Ofs6UtLmSFhluw
-
-{
-        "to_name": "abc1",
-        "to_id": "payload1",
-        "user_id": "payload1",
-        "type": "payload1",
-        "post_id": "64c52c2cb89de219fbc3a78f",
-        "content": "hello"
-}
-
-###
-POST {{url_dev}}/deleteComment
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MTAyOTg5NywiZXhwIjoxNjkxMjAyNjk3fQ.SjDGEa0oXQwsxdRWxfjJIIeKFagH-Ofs6UtLmSFhluw
-
-{
-        "to_name": "abc1",
-        "to_id": "payload1",
-        "user_id": "payload1",
-        "type": "payload1",
-        "post_id": "64c52c2cb89de219fbc3a78f",
-        "content": "hello"
-}
-
-###
-POST {{url_dev}}/getPostById/64c779bcf638103623906a63
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MTAyOTg5NywiZXhwIjoxNjkxMjAyNjk3fQ.SjDGEa0oXQwsxdRWxfjJIIeKFagH-Ofs6UtLmSFhluw
-
-
-###
-POST {{url_dev}}/groupMess/addGroup/
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MTAyOTg5NywiZXhwIjoxNjkxMjAyNjk3fQ.SjDGEa0oXQwsxdRWxfjJIIeKFagH-Ofs6UtLmSFhluw
-
-{
-  "payload": [
-    {
-      "_id": "64c47c026a88524bad10ddf0",
-      "name": "ngoxuanquy04@gmail.com",
-      "email": "ngoxuanquy04@gmail.com",
-      "password": "$2a$10$aBIp1orsFI530nE6g4lLzOsk/Tc.EbBwYbPqHy7fIHEMs12T5nO7y"
-    }
-  ]
-}
-
-
-###
-POST {{url_dev}}/story/getStory
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MTIyMzcwOCwiZXhwIjoxNjkxMzk2NTA4fQ.
-
-###
-POST {{url_dev}}/user/addImg
-Content-Type: application/json 
-x-api-key: 5137d0d041f6f4928876647f6b5ea4d6d6630cd51920ce576c36b9e9ee76144617811bc4e9575570a42eb6f5a68953ed4523e4df29d322fb18cb7a2bf51cfb46
-x-client-id: 64c471bae4f431c913319fae
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGM0NzFiYWU0ZjQzMWM5MTMzMTlmYWUiLCJlbWFpbCI6IjEyMSIsImlhdCI6MTY5MTI5MTc4NCwiZXhwIjoxNjkxNDY0NTg0fQ.-HFlxIqR-pLvD46H_nMzo_SQ-Bw-7ruuj603_T1-qkE
-
-{
-    "user_id": "64c46e85d0ca4213183cd5fc",
-    "img": "a1"
-}
