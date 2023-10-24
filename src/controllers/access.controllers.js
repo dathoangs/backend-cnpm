@@ -4,10 +4,10 @@ const { CREATED, SuccessResponse } = require('../core/success.response')
 
 class AccessController {
 
-    SingUp = async (req, res, next) => {
+    SignUp = async (req, res, next) => {
         new CREATED({
             message: 'Register OK',
-            metadata: await AccessService.singup(req.body),
+            metadata: await AccessService.signup(req.body),
         }).send(res)
     }
 

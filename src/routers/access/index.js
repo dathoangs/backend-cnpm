@@ -6,7 +6,7 @@ const { authenticationV2 } = require('../../auth/authUntil')
 const router = express.Router()
 
 
-router.post('/signup', asyncHandler(AccessController.SingUp))
+router.post('/signup', asyncHandler(AccessController.SignUp))
 router.post('/login', asyncHandler(AccessController.Login))
 
 //check _id của users

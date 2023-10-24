@@ -49,10 +49,8 @@ class AccessService {
         }
     }
 
-    static singup = async ({ name, email, password }) => {
-
+    static signup = async ({ name, email, password }) => {
         try {
-
             if (email == "" || password == "") {
                 return {
                     code: '503',
